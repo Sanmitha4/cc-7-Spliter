@@ -3,12 +3,12 @@
 
 @import 'tailwindcss';
 
+@theme {
+  --font-space-mono: 'Space Mono', monospace;
+  /*colors*/
 
-@theme{
-    --font-space-mono:'Space Mono' ,monospace;
+  --color-bgshadow: '#F3F8FB';
 
-    --color-bgshadow:'#F3F8FB';
-
-    --color-darkgreen:'#5BABA2';
-    --color-text:'#00474B';
+  --color-darkgreen: '#5BABA2';
+  --color-label: '#5d6b6c';
 }
