@@ -1,0 +1,22 @@
+<form [formGroup]="inputForm" class="flex flex-col gap-4" (ngSubmit)="submit()">
+  <app-tip-input
+    label="Tip Amount"
+    variant="currency"
+    [value]="0"
+    formControlName="tipAmount"
+  ></app-tip-input>
+
+  <app-tip-input
+    label="Persons"
+    variant="people"
+    [value]="0"
+    formControlName="persons"
+  ></app-tip-input>
+  <button
+    type="submit"
+    class="bg-cyan text-white font-space-mono font-bold py-2 rounded-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
+    [disabled]="inputForm.invalid"
+  >
+    Submit
+  </button>
+</form>
