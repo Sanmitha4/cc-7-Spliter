@@ -5,5 +5,8 @@
       "command": "npx",
       "args": ["-y", "@angular/cli", "mcp"]
     }
+  },
+  "context-mode": {
+    "command": "context-mode"
   }
 }

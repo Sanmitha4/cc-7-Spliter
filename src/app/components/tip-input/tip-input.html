@@ -1,6 +1,12 @@
 <section class="flex flex-col gap-2">
-  <label for="tip" class="font-space-mono text-sm text-label mb-2">Tip amount</label>
-  <div class="relative">
+  <div class="flex justify-between">
+    <label for="tip" class="font-space-mono text-sm text-label mb-2">Tip amount</label>
+    @if (error()) {
+      <span class="font-space-mono text-xs text-red-500">{{ error() }}</span>
+      
+    }
+  </div>
+  <div class="flex items-container relative">
     <img
       src="./assests/dollar.svg"
       alt="dollar icon"
@@ -8,10 +14,24 @@
       class="absolute left-3 top-1/2 -translate-y-1/2 w-3"
     />
     <input
-      type="number"
-      class="block text-right text-2xl text-darkgreen bg-bgshadow font-space-mono font-bold px-2 py-2 pl-10 focus:outline-cyan-500"
+      #tipInput
+      type="text"
+      inputmode="numeric"
+      [value]="value()"
+      (input)="limitInputByWidth(tipInput)"
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')"
+      class="block text-right text-2xl text-darkgreen bg-bgshadow font-space-mono font-bold px-2 py-2 pl-10
+       focus:outline-cyan-400 focus:outline-2 rounded-sm w-full border-2"
       id=" tip"
       name="tip"
+
+      [class.border-red-500]="error()"
+      [class.focus:border-red-500]="error()"
+      
+      [class.border-transparent]="!error()"
+      [class.focus:border-cyan-400]="!error()"
+
+
     />
   </div>
 </section>

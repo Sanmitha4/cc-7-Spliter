@@ -10,5 +10,10 @@
   --color-bgshadow: '#F3F8FB';
 
   --color-darkgreen: '#5BABA2';
+  --color-outline:'#2B9BEB';
+
+
+  --color-cyan:'#0C8CE9';
   --color-label: '#5d6b6c';
+  --color-error:'#E85D5D';
 }
